@@ -366,8 +366,8 @@ class ReactChannel(commands.Cog):
         user = self.bot.get_user(payload.user_id)  # User whose reaction was removed
         if not guild or not channel or not user or not payload.message_id:
             return
-        # channels = await self.config.guild(guild).channels()
-        # channel_type = channels.get(str(payload.channel_id))
+         channels = await self.config.guild(guild).channels()
+         channel_type = channels.get(str(payload.channel_id))
         message = await channel.fetch_message(payload.message_id)
         if not message:
             return
